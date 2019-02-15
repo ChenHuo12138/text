@@ -33,7 +33,7 @@ export default {
    const res= await  this.$http.post("login", this.formdata)
         //结构赋值
         console.log(res);
-        const { data: { data, meta: { msg, status } } } = res;
+        const { data: { data:{token}, meta: { msg, status } } } = res;
         if (status === 200) {
           //通过导航式编程来改变标识
           this.$router.push({
